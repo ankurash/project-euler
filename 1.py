@@ -1,8 +1,8 @@
 import argparse
 
 #region commandLineArgs
-parser = argparse.ArgumentParser()
-parser.add_argument("N", help="max number", type=int, default=1000)
+parser = argparse.ArgumentParser(description="sum of all the multiples of 3 or 5 under N")
+parser.add_argument("-N", help="max number", type=int, default=1000)
 args = parser.parse_args()      #Parse arguments
 
 #endregion
