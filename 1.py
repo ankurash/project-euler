@@ -2,7 +2,7 @@ import argparse
 import time
 
 #region commandLineArgs
-parser = argparse.ArgumentParser(description="sum of all the multiples of 3 or 5 under N")
+parser = argparse.ArgumentParser(description="find sum of all the multiples of 3 or 5 under N")
 parser.add_argument("-N", help="max number", type=int, default=1000)
 args = parser.parse_args()      #Parse arguments
 
@@ -23,6 +23,6 @@ class Solution:
 
 
 if __name__ == "__main__":
-    print("Project Euler Problem 1")
+    print("Project Euler Problem 1: sum of all the multiples of 3 or 5 under N")
     sol = Solution(args.N)
     print(sol.solve())
