@@ -1,5 +1,5 @@
 import argparse
-import libraries.mathprimality as primality
+from libraries.mathprimality import largest_prime_factor, factorize
 import time
 
 #region commandLineArgs
@@ -15,7 +15,18 @@ class Solution:
     
     def solve(self):
         t = time.time_ns()
-        res = primality.largest_prime_factor(self.N)
+        res = largest_prime_factor(self.N)
+        t2 = time.time_ns()-t
+        return res,"Solved in "+str(t2)+" ns"
+    
+    def solve2(self):
+        t = time.time_ns()
+        for a,b in factorize(self.N):
+            if len(factorize(b))<2:
+                res = b
+                break
+            if len(factorize(a))<2:
+                res = a
         t2 = time.time_ns()-t
         return res,"Solved in "+str(t2)+" ns"
 
@@ -24,4 +35,5 @@ if __name__ == "__main__":
     print("Project Euler Problem 3: the largest prime factor of N")
     sol = Solution(args.N)
     print(sol.solve())
+    print(sol.solve2())
     
