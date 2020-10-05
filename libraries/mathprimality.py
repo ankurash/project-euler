@@ -37,4 +37,20 @@ def hcf(a,b):
     return max(set(factorize(a,pairs=False)).intersection(factorize(b,pairs=False)))
 
 
-    
+def N_primes(N):
+    try:
+        nums = [True] * (N*100)
+    except:
+        nums = [True] * (N*10)
+        
+    count = 0
+    x = 1
+    primes = []
+    while count<N:
+        x += 1
+        if nums[x]:
+            primes.append(x)
+            count += 1
+            for i in range(x, len(nums), x):
+                nums[i] = False
+    return primes
