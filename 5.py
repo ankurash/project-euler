@@ -23,6 +23,7 @@ class Solution():
         return lcm,"Solved in "+str(t2)+" ns"
 
 if __name__ == "__main__":
+    print("Project Euler problem 5: the smallest positive number that is evenly divisible by all of the numbers from 1 to N")
     sol = Solution(args.N)
     print(sol.solve())
     
