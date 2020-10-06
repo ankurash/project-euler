@@ -1,5 +1,5 @@
 import argparse
-import time
+from time import time_ns
 
 #region commandLineArgs
 parser = argparse.ArgumentParser(description="find sum of all the multiples of 3 or 5 under N")
@@ -14,11 +14,11 @@ class Solution:
         self.N = N
 
     def solve(self):
-        t = time.time_ns()
+        t = time_ns()
         for i in range(self.N):
             if i%3 == 0 or i%5 == 0:
                 self.sum += i
-        t2 = time.time_ns()-t
+        t2 = time_ns()-t
         return self.sum, "Solved in "+str(t2)+" ns"
 
 

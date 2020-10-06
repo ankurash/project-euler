@@ -2,10 +2,12 @@ import argparse
 from time import time_ns
 from libraries.mathprimality import N_primes
 
+#region commandLineArgs
 parser = argparse.ArgumentParser(description="the Nth prime number")
 parser.add_argument('-N', help="Nth prime number", type=int, default=10001)
 args = parser.parse_args()
 
+#endregion
 
 class Solution():
     def __init__(self,N):

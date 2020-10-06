@@ -2,7 +2,7 @@ import argparse
 from libraries.palindrome import is_palindrome
 from libraries.mathprimality import  factorize
 from math import pow
-import time
+from time import time_ns
 
 #region commandLineArgs
 parser = argparse.ArgumentParser(description="find the largest palindrome which is multiple of two N digit numbers")
@@ -18,9 +18,9 @@ class Solution:
         self.U = self.L*10 - 1
     
     def solve(self):
+        t = time_ns()
         res = 0
         found = False
-        t = time.time_ns()
         for i in reversed(range(self.U*self.U+1)):
             if is_palindrome(i):
                 factor_pairs = factorize(i)
@@ -31,7 +31,7 @@ class Solution:
                         break
             if found:
                 break
-        t2 = time.time_ns()-t
+        t2 = time_ns()-t
         return res,"Solved in "+str(t2)+" ns"
 
 
