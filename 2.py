@@ -1,6 +1,6 @@
 import argparse
 import libraries.fibonacci as fib
-import time
+from time import time_ns
 
 #region commandLineArgs
 parser = argparse.ArgumentParser(description="find the sum of the even-valued terms till elements less than N")
@@ -15,11 +15,11 @@ class Solution:
         self.N = N
 
     def solve(self):
-        t = time.time_ns()
+        t = time_ns()
         f = fib.Fibonacci()
         f.fill_till_Max_N(self.N)
         res = f.sum_of_elements_divisible_by_D(2)
-        t2 = time.time_ns()-t
+        t2 = time_ns()-t
         return res, "Solved in "+str(t2)+" ns"
 
 

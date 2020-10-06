@@ -1,6 +1,14 @@
 import math
 
-def largest_prime_factor(N):
+def largest_prime_factor(N:int):
+    """largest prime factor of N
+
+    Args:
+        N (int): number
+
+    Returns:
+        [int]: largest prime factor
+    """
     while N%2==0:
         N=N//2
     for i in range(3,int(math.sqrt(N)),2):
@@ -8,7 +16,16 @@ def largest_prime_factor(N):
             N=N//i
     return N
 
-def factorize(N, pairs=True):
+def factorize(N:int, pairs=True):
+    """find factors/factor pairs of N
+
+    Args:
+        N (int): number
+        pairs (bool, optional): whether to generate list of factor pairs or list of factors. Defaults to True.
+
+    Returns:
+        list: factor pairs (if pairs==True) else factors
+    """
     if pairs:
         factor_pairs = []
         i = 1
@@ -33,11 +50,28 @@ def factorize(N, pairs=True):
             i += 1
         return factors
 
-def hcf(a,b):
+def hcf(a:int,b:int):
+    """HCF or GCD of a and b
+
+    Args:
+        a (int): number
+        b (int): number
+
+    Returns:
+        int: HCF
+    """
     return max(set(factorize(a,pairs=False)).intersection(factorize(b,pairs=False)))
 
 
-def N_primes(N):
+def N_primes(N:int):
+    """ list of first N prime numbers
+
+    Args:
+        N (int): number
+
+    Returns:
+        list: N prime numbers
+    """
     try:
         nums = [True] * (N*100)
     except:

@@ -2,10 +2,12 @@ import argparse
 from time import time_ns
 from libraries.number_series import sum_of_squares_of_N_natural_numbers, sum_of_N_natural_numbers
 
+#region commandLineArgs
 parser = argparse.ArgumentParser(description="the  difference between the sum of the squares of the first N natural numbers and the square of the sum")
 parser.add_argument('-N', help="max number", type=int, default=100)
 args = parser.parse_args()
 
+#endregion
 
 class Solution():
     def __init__(self,N):

@@ -1,6 +1,6 @@
 import argparse
 from libraries.mathprimality import largest_prime_factor, factorize
-import time
+from time import time_ns
 
 #region commandLineArgs
 parser = argparse.ArgumentParser(description="find the largest prime factor of N")
@@ -14,20 +14,20 @@ class Solution:
         self.N = N
     
     def solve(self):
-        t = time.time_ns()
+        t = time_ns()
         res = largest_prime_factor(self.N)
-        t2 = time.time_ns()-t
+        t2 = time_ns()-t
         return res,"Solved in "+str(t2)+" ns"
     
     def solve2(self):
-        t = time.time_ns()
+        t = time_ns()
         for a,b in factorize(self.N):
             if len(factorize(b))<2:
                 res = b
                 break
             if len(factorize(a))<2:
                 res = a
-        t2 = time.time_ns()-t
+        t2 = time_ns()-t
         return res,"Solved in "+str(t2)+" ns"
 
 
