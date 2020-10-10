@@ -32,8 +32,8 @@ class Solution:
 
 
 if __name__ == "__main__":
-    print("Project Euler Problem 3: the largest prime factor of N")
+    print("Project Euler Problem 3: largest prime factor of N")
     sol = Solution(args.N)
-    print(sol.solve())
-    print(sol.solve2())
+    print("\t",sol.solve())
+    print("\t",sol.solve2())
     

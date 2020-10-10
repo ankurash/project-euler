@@ -3,7 +3,7 @@ from time import time_ns
 from libraries.mathprimality import factorize, hcf
 
 #region commandLineArgs
-parser = argparse.ArgumentParser(description="the smallest positive number that is evenly divisible by all of the numbers from 1 to N")
+parser = argparse.ArgumentParser(description="find the smallest positive number that is evenly divisible by all of the numbers from 1 to N")
 parser.add_argument('-N', help="max number", type=int, default=20)
 args = parser.parse_args()
 
@@ -25,7 +25,7 @@ class Solution():
         return lcm,"Solved in "+str(t2)+" ns"
 
 if __name__ == "__main__":
-    print("Project Euler problem 5: the smallest positive number that is evenly divisible by all of the numbers from 1 to N")
+    print("Project Euler problem 5: smallest positive number that is evenly divisible by all of the numbers from 1 to N")
     sol = Solution(args.N)
-    print(sol.solve())
+    print("\t",sol.solve())
     
