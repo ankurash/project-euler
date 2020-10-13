@@ -88,3 +88,22 @@ def N_primes(N:int):
             for i in range(x, len(nums), x):
                 nums[i] = False
     return primes
+
+def primes_till_N(N:int):
+    """ Generate all primes less than N
+
+    Args:
+        N (int): upper bound
+
+    Returns:
+        list: list of prime numbers
+    """
+
+    nums = [True] * N
+    primes = []
+    for x in range(2,N):
+        if nums[x]:
+            primes.append(x)
+            for i in range(x, len(nums), x):
+                nums[i] = False
+    return primes
