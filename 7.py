@@ -3,7 +3,7 @@ from time import time_ns
 from libraries.mathprimality import N_primes
 
 #region commandLineArgs
-parser = argparse.ArgumentParser(description="the Nth prime number")
+parser = argparse.ArgumentParser(description="find the Nth prime number")
 parser.add_argument('-N', help="Nth prime number", type=int, default=10001)
 args = parser.parse_args()
 
@@ -23,6 +23,6 @@ class Solution():
         return res,"Solved in "+str(t2)+" ns"
 
 if __name__ == "__main__":
-    print("Project Euler problem 7: find the Nth prime number")
+    print("Project Euler problem 7: Nth prime number")
     sol = Solution(args.N)
-    print(sol.solve())
+    print("\t",sol.solve())

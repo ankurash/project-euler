@@ -36,7 +36,7 @@ class Solution:
 
 
 if __name__ == "__main__":
-    print("Project Euler Problem 4: the largest palindrome which is multiple of two N digit numbers")
+    print("Project Euler Problem 4: largest palindrome which is multiple of two N digit numbers")
     sol = Solution(args.N)
-    print(sol.solve())
+    print("\t",sol.solve())
     

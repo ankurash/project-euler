@@ -24,7 +24,7 @@ class Solution:
 
 
 if __name__ == "__main__":
-    print("Project Euler Problem 2: the sum of the even-valued terms till elements less than N")
+    print("Project Euler Problem 2: sum of the even-valued terms till elements less than N")
     sol = Solution(args.N)
-    print(sol.solve())
+    print("\t",sol.solve())
     
